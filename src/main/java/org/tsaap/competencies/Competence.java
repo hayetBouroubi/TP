@@ -1,5 +1,7 @@
 package org.tsaap.competencies;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,10 +24,12 @@ public class Competence {
 
     @ManyToOne
     @NotNull
+    //@Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Category category;
 
     @ManyToOne
     @NotNull
+
     private Catalog catalog;
 
 
