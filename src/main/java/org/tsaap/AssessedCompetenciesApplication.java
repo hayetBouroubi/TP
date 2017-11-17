@@ -17,17 +17,15 @@ public class AssessedCompetenciesApplication {
 	private CompetenceService competenceService;
 
 	public static void main(String[] args) {
-		System.out.println("ddfdfdfeeeeee");
 		SpringApplication.run(AssessedCompetenciesApplication.class, args);
-		System.out.println("fin");
 	}
 
 	@Bean
 	public CommandLineRunner insertionsBdd() {
 		System.out.println("debut insertions");
 		Competence comp = new Competence();
-		comp.setName("categorie1");
-		comp.setDescription("Description categorie1");
+		comp.setName("Competence1");
+		comp.setDescription("Description Competence1");
 
 		Category category = new Category();
 		category.setName("category1");
@@ -39,6 +37,21 @@ public class AssessedCompetenciesApplication {
 		catalog.setDescription("description catalog1");
 		comp.setCatalog(catalog);
 		competenceService.saveCompetence(comp);
+		
+		Competence comp2 = new Competence();
+		comp2.setName("Competence2");
+		comp2.setDescription("Description Competence2");
+
+		Category category2 = new Category();
+		category2.setName("category2");
+		category2.setDescription("Description category2");
+		comp2.setCategory(category2);
+
+		Catalog catalog2 = new Catalog();
+		catalog2.setName("catalog2");
+		catalog2.setDescription("description catalog2");
+		comp2.setCatalog(catalog2);
+		comp2etenceService.saveCompetence(comp2);
 
 		System.out.println("fin insertions");
 		return null;
